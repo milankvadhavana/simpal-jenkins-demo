@@ -5,16 +5,17 @@ pipeline {
         jdk 'JDK-17'
     }
   environment {
-    DOCKER_IMAGE = 'milanvadhavana/simplehello'
+    DOCKER_IMAGE = 'milanvadhavana/springboot-demo'
     DOCKER_TAG = "${BUILD_NUMBER}"
-	DOCKER_CREDS = credentials('dockerhub-credentials')
+	DOCKER_CREDS = credentials('docker-credss')
   }
 
   stages {
     stage('Checkout') {
       steps {
         git branch: 'main',
-            url: 'https://github.com/amrutapage/hello-app.git'
+            url: 'https://github.com/milankvadhavana/simpal-jenkins-demo.git'
+            
       }
     }
 
